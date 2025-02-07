@@ -1,3 +1,6 @@
 <div class="container-nav-bar" >
-    <ion-button *ngFor="let option of options" (click)="buttonRegister(option.url)">{{option.name}}</ion-button>
+    <div class="option" (click)="buttonRegister(option.url)" *ngFor="let option of options" >
+        <ion-icon [name]="option.icon"></ion-icon>
+        <p>{{option.name}}</p>
+    </div>
 </div>

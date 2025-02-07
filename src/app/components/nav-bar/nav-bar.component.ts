@@ -11,7 +11,11 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent  implements OnInit {
-  public options = [{name:"Register",url:"/register"},{name:"Login",url:"/login"}]
+  public options = [
+    {name:"Register",url:"/register",icon:"person-add-outline"},
+    {name:"Login",url:"/login",icon:"finger-print-outline"},
+    {name:"Support",url:"/support",icon:"help-circle-outline"}
+  ]
   constructor(
     private router: Router
   ) { }
@@ -22,7 +26,6 @@ export class NavBarComponent  implements OnInit {
   }
 
   buttonRegister(option:String){
-    console.log("🚀 ~ NavBarComponent ~ buttonRegister ~ option:", option)
     
     this.router.navigate([option]);
   }
