@@ -15,18 +15,38 @@
 
 
     <div class="form">
-      <ion-input class="inputForm" label="Usuario" label-placement="floating" fill="solid"
-        placeholder="Ingresa un nombre de usuario"></ion-input>
+      <ion-input 
+        class="inputForm" 
+        label="Usuario" 
+        label-placement="floating" 
+        fill="solid"
+        placeholder="Ingresa un nombre de usuario"
+        [(ngModel)]="userData.name"
+        >
+      </ion-input>
 
-      <ion-input class="inputForm" label="Contraseña" label-placement="floating" fill="solid"
-        placeholder="Ingresa una contraseña"></ion-input>
+      <ion-input 
+        class="inputForm" 
+        label="Contraseña" 
+        label-placement="floating" 
+        fill="solid"
+        placeholder="Ingresa una contraseña"
+        [(ngModel)]="userData.password"
+        >
+      </ion-input>
 
-      <ion-select class="inputForm" label=" Genero" label-placement="floating" fill="solid">
-        <ion-select-option value="apple">Masculino</ion-select-option>
-        <ion-select-option value="banana">Femenino</ion-select-option>
+      <ion-select 
+        class="inputForm" 
+        label=" Genero" 
+        label-placement="floating" 
+        fill="solid"
+        [(ngModel)]="userData.gender"
+        >
+        <ion-select-option value="male">Masculino</ion-select-option>
+        <ion-select-option value="female">Femenino</ion-select-option>
       </ion-select>
 
-      <ion-button fill="outline" size="medium">Continuar</ion-button>
+      <ion-button (click)="submitButton()" fill="outline" size="medium">Continuar</ion-button>
 
     </div>
 

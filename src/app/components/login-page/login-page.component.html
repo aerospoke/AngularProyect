@@ -1,7 +1,6 @@
 <div class="principalContainer">
   <div class="formContainer">
 
-    
     <div class="buttonBack">
       <ion-button  (click)="clickButtonBack()" fill="clear">
         <ion-icon name="arrow-back-circle-outline"></ion-icon>
@@ -13,23 +12,30 @@
       <p>Iniciar sesion</p>
     </div>
 
-
     <div class="form">
-      <ion-input class="inputForm" label="Usuario" label-placement="floating" fill="solid"
-        placeholder="Ingresa un nombre de usuario"></ion-input>
+      <ion-input 
+        class="inputForm" 
+        label="Usuario" 
+        label-placement="floating" 
+        fill="solid"
+        placeholder="Ingresa un nombre de usuario"
+        [(ngModel)]="dataLogin.username"
+        >
+      </ion-input>
 
-      <ion-input class="inputForm" label="Contraseña" label-placement="floating" fill="solid"
-        placeholder="Ingresa una contraseña"></ion-input>
+      <ion-input 
+        class="inputForm" 
+        label="Contraseña" 
+        label-placement="floating" 
+        fill="solid"
+        placeholder="Ingresa una contraseña"
+        [(ngModel)]="dataLogin.password"
+        >
+      </ion-input>
 
-
-
-      <ion-button fill="outline" size="medium">Continuar</ion-button>
+      <ion-button (click)="submitButton()" fill="outline" size="medium">Continuar</ion-button>
 
     </div>
-
-  
-
-
 
   </div>
 </div>
