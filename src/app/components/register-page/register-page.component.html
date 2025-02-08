@@ -27,6 +27,16 @@
 
       <ion-input 
         class="inputForm" 
+        label="Email" 
+        label-placement="floating" 
+        fill="solid"
+        placeholder="Ingresa una contraseña"
+        [(ngModel)]="userData.email"
+        >
+      </ion-input>
+
+      <ion-input 
+        class="inputForm" 
         label="Contraseña" 
         label-placement="floating" 
         fill="solid"
@@ -35,7 +45,7 @@
         >
       </ion-input>
 
-      <ion-select 
+      <!-- <ion-select 
         class="inputForm" 
         label=" Genero" 
         label-placement="floating" 
@@ -44,9 +54,10 @@
         >
         <ion-select-option value="male">Masculino</ion-select-option>
         <ion-select-option value="female">Femenino</ion-select-option>
-      </ion-select>
+      </ion-select> -->
 
       <ion-button (click)="submitButton()" fill="outline" size="medium">Continuar</ion-button>
+      <p *ngIf="responseCreation.length > 2">{{responseCreation}}</p>
 
     </div>
 

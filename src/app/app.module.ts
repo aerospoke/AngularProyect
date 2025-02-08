@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { LoginPageComponent } from './components/login-page/login-page.component
     IonicModule.forRoot(),
     AppRoutingModule,
     NavBarComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    HttpClientModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
