@@ -49,7 +49,6 @@ export class RegisterPageComponent {
         this.responseCreation=response.message; 
       },
       error: (error) => {
-        console.error('Error en la petición:', error);
         this.responseCreation=error.error.message;
       }
     });

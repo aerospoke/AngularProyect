@@ -13,4 +13,18 @@ export class UsuarioService {
   registrarUsuario(data: any): Observable<any> {
     return this.http.post(this.apiUrl+'/register', data);
   }
+
+  login(data:any): Observable<any>{
+    return this.http.post(this.apiUrl+'/login', data);
+  }
+
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token; 
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+  }
 }

@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+
 
 class AuthController extends Controller
 {
-    public function register(Request $request)
-    {
+    public function register(Request $request) {
+        
         if (!$request->name || !$request->email || !$request->password) {
             return response()->json(['error' => 'Todos los campos son obligatorios'], 400);
         }
@@ -31,5 +33,27 @@ class AuthController extends Controller
         ]);
 
         return response()->json(['message' => 'Usuario registrado correctamente'], 201);
+    }
+
+    public function login(Request $request){
+        
+        $request->validate([
+            'username' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt(['email' => $request->username, 'password' => $request->password])) {
+        
+            $user = Auth::user();
+            $token = $user->createToken('auth_token')->plainTextToken;
+
+            return response()->json([
+                'message' => 'Login exitoso',
+                'user' => $user,
+                'token' => $token
+            ]);
+        }
+
+        return response()->json(['message' => 'Credenciales incorrectas'], 401);
     }
 }
