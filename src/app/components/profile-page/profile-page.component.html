@@ -1,3 +1,61 @@
-<p>
-  profile-page works!
-</p>
+<div class="principal-container">
+
+    <div class="buttonBack">
+      <ion-button  (click)="clickButtonBack()" fill="clear">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        <p>Configuración de perfil</p>
+      </ion-button>
+    </div>
+
+    <ion-avatar>
+      <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+
+    <div class="form">
+      <ion-input 
+        class="inputForm" 
+        label="Usuario" 
+        label-placement="floating" 
+        fill="solid"
+        placeholder="Ingresa un nombre de usuario"
+        [(ngModel)]="userData.name"
+        >
+      </ion-input>
+
+      <ion-input 
+        class="inputForm" 
+        label="Email" 
+        label-placement="floating" 
+        fill="solid"
+        placeholder="Ingresa una contraseña"
+        [(ngModel)]="userData.email"
+        >
+      </ion-input>
+
+      <ion-input 
+        class="inputForm" 
+        label="Contraseña" 
+        label-placement="floating" 
+        fill="solid"
+        placeholder="Ingresa una contraseña"
+        [(ngModel)]="userData.password"
+        >
+      </ion-input>
+
+      <ion-input 
+        class="inputForm" 
+        label="Pais" 
+        label-placement="floating" 
+        fill="solid"
+        placeholder="Ingresa tu pais"
+        [(ngModel)]="userData.country"
+        >
+      </ion-input>
+
+      <div class="form-color">
+        <p>Selecciona un color para tu App</p>
+        <input type="color" [(ngModel)]="userData.selectedColor"/>
+      </div>
+
+</div>
+
