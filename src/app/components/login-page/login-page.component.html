@@ -34,6 +34,7 @@
       </ion-input>
 
       <ion-button (click)="submitButton()" fill="outline" size="medium">Continuar</ion-button>
+      <p *ngif="errorMessage.length > 2">{{errorMessage}}</p>
 
     </div>
 

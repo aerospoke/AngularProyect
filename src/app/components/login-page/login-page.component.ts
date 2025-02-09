@@ -26,8 +26,6 @@ export class LoginPageComponent  implements OnInit {
   constructor(
     private router: Router,
     private usuarioService :UsuarioService
-
-    // private authService :AuthService
   ) { }
 
   ngOnInit() {}
@@ -48,7 +46,7 @@ export class LoginPageComponent  implements OnInit {
         localStorage.setItem('token', response.token);
         localStorage.setItem('user', JSON.stringify(response.user));
 
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/profile']);
       },
       (error) => {
         this.errorMessage = 'Credenciales incorrectas. Inténtalo de nuevo.';
