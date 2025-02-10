@@ -3,4 +3,6 @@ Proyecto en proceso
 Actualmente contiene:
 -Pagina registro
 -Pagina login
--Navbar(Routing funcional)
+-Navbar
+-pagina de perfil donde se pueden agregar mas datos al perfil 
+-
