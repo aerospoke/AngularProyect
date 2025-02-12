@@ -35,8 +35,10 @@ export class UsuarioService {
 
     return this.http.get<User>(`${this.apiUrl}/getUser`, { params });
   }
-
-  
+  deleteUser(data:any):Observable<any>{
+    this.logout()
+    return this.http.post(this.apiUrl+'/deleteUser', data);
+  }
   
 
   login(data:any): Observable<any>{

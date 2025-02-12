@@ -38,11 +38,11 @@ class AuthController extends Controller
     public function login(Request $request){
         
         $request->validate([
-            'username' => 'required|email',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        if (Auth::attempt(['email' => $request->username, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
         
             $user = Auth::user();
             $token = $user->createToken('auth_token')->plainTextToken;
@@ -88,4 +88,10 @@ class AuthController extends Controller
         return response()->json(['message' => 'Usuario actualizado correctamente'], 201);
     }
 
+    public function deleteUser(Request $request){
+
+        $userId = $request->id;
+
+        return response()->json(['message' => 'Usuario eliminado correctamente'], 201);
+    }
 }

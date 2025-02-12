@@ -28,6 +28,7 @@ Route::get('/getUser', [AuthController::class, 'getUser']);
 
 Route::post('/updateUser', [AuthController::class, 'updateUser']);
 
+Route::post('/deleteUser', [AuthController::class, 'deleteUser']);
 
 
 

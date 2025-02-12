@@ -15,11 +15,11 @@
     <div class="form">
       <ion-input 
         class="inputForm" 
-        label="Usuario" 
+        label="Email" 
         label-placement="floating" 
         fill="solid"
-        placeholder="Ingresa un nombre de usuario"
-        [(ngModel)]="dataLogin.username"
+        placeholder="Ingresa email"
+        [(ngModel)]="dataLogin.email"
         >
       </ion-input>
 
@@ -34,7 +34,7 @@
       </ion-input>
 
       <ion-button (click)="submitButton()" fill="outline" size="medium">Continuar</ion-button>
-      <p *ngif="errorMessage.length > 2">{{errorMessage}}</p>
+      <p>{{errorMessage}}</p>
 
     </div>
 

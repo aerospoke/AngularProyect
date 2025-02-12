@@ -63,6 +63,7 @@
       <input type="color" [(ngModel)]="userData.selectedColor"/> -->
 
       <ion-button (click)="submitButton()" fill="outline" size="medium">Actualizar datos</ion-button>
+      <ion-button color="danger" (click)="deleteButton()" fill="outline" size="medium">Eliminar cuenta</ion-button>
 
       <p *ngIf="responseCreation.length > 2 ">{{responseCreation}}</p>
     </div>

@@ -17,7 +17,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class LoginPageComponent  implements OnInit {
 
   public dataLogin = {
-    username:'',
+    email:'',
     password:''
   }
 
@@ -49,6 +49,7 @@ export class LoginPageComponent  implements OnInit {
         this.router.navigate(['/profile']);
       },
       (error) => {
+        console.log("🚀 ~ LoginPageComponent ~ onLogin ~ error:", error)
         this.errorMessage = 'Credenciales incorrectas. Inténtalo de nuevo.';
       }
     );

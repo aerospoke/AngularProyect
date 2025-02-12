@@ -46,6 +46,14 @@ export class ProfilePageComponent  implements OnInit {
 
   }
 
+  deleteButton(){
+    this.usuarioService.deleteUser(this.userData).subscribe({
+      next: (response) => {
+        this.responseCreation=response.message; 
+      },
+    });
+  }
+
   getUser() {
     this.usuarioService.getUser().subscribe({
       next: (response) => {
