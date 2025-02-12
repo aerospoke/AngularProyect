@@ -56,4 +56,36 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Credenciales incorrectas'], 401);
     }
+
+    public function getUser(Request $request){
+        $userId = $request->query('id');
+
+        if (!$userId) {
+            return response()->json(['error' => 'ID de usuario no proporcionado'], 400);
+        }
+
+        $user = User::where('id', $userId)->select('id','name','email','country')->first();
+
+        if (!$user) {
+            return response()->json(['error' => 'Usuario no encontrado'], 404);
+        }
+
+        return response()->json($user);
+    }
+
+    public function updateUser(Request $request){
+
+        
+        $user = User::where('id',$request->id)->first();
+        
+        $user->name = $request->name;
+        $user->password = Hash::make($request->password);
+        $user->email = $request->email;
+        $user->country = $request->country;
+
+        $user->save();
+        
+        return response()->json(['message' => 'Usuario actualizado correctamente'], 201);
+    }
+
 }

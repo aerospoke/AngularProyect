@@ -24,4 +24,11 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::post('/login', [AuthController::class, 'login']);
 
+Route::get('/getUser', [AuthController::class, 'getUser']);
+
+Route::post('/updateUser', [AuthController::class, 'updateUser']);
+
+
+
+
 

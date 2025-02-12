@@ -23,7 +23,7 @@
         label="Nombre de usuario" 
         label-placement="floating" 
         fill="outline" 
-        placeholder="Ingresa un nuevo nombre de usuario"
+        placeholder="Ingresa un nuevo nombre"
         [(ngModel)]="userData.name"
         >
       </ion-input>
@@ -32,17 +32,8 @@
         label="Email" 
         label-placement="floating" 
         fill="outline" 
-        placeholder="Ingresa una contraseña"
+        placeholder="Ingresa un nuevo Email"
         [(ngModel)]="userData.email"
-        >
-      </ion-input>
-
-      <ion-input 
-        label="Contraseña" 
-        label-placement="floating" 
-        fill="outline" 
-        placeholder="contraseña actual"
-        [(ngModel)]="userData.password"
         >
       </ion-input>
 
@@ -50,18 +41,30 @@
         label="Pais" 
         label-placement="floating" 
         fill="outline" 
-        placeholder="pais actual dinamico XD"
+        placeholder="Ingresa un nuevo Pais"
         [(ngModel)]="userData.country"
         >
       </ion-input>
       
+      <ion-input 
+        label="Contraseña" 
+        label-placement="floating" 
+        fill="outline" 
+        placeholder="Ingresa una nueva contraseña"
+        [(ngModel)]="userData.password"
+        >
+      </ion-input>
+
+      
     </div>
     
     <div class="form-color">
-      <p>Selecciona un color para tu App</p>
-      <input type="color" [(ngModel)]="userData.selectedColor"/>
+      <!-- <p>Selecciona un color para tu App</p>
+      <input type="color" [(ngModel)]="userData.selectedColor"/> -->
 
       <ion-button (click)="submitButton()" fill="outline" size="medium">Actualizar datos</ion-button>
+
+      <p *ngIf="responseCreation.length > 2 ">{{responseCreation}}</p>
     </div>
 </div>
 
